@@ -27,13 +27,14 @@ export class User extends React.Component {
         <div>
           <AvatarList>
             <AvatarContainer avatar={avatar} />
-            <div>
+            <AvatarContainer avatar={avatar} />
+            <AvatarContainer avatar={avatar} />
+            <UserInfo>
               <UserName>
-                {' '}
                 {firstname} {lastname}
               </UserName>
               <BtnAddAvatar />
-            </div>
+            </UserInfo>
           </AvatarList>
           <LoginVK onClick={this.props.handleLogin}>
             Сохранить настройки
@@ -71,11 +72,14 @@ User.propTypes = {
   handleLogin: PropTypes.func.isRequired,
 }
 
+const UserInfo = styled.div`
+  margin-left: 30px;
+`
+
 const AvatarList = styled.div`
   display: grid;
-  //outline: 1px solid blue;
   width: 900px;
-  margin: 30px auto;
+  margin: 0 auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 `
 
@@ -124,8 +128,8 @@ const UserName = styled.p`
   color: #535353;
   display: grid;
   text-align: center;
-  max-width: 600px;
+  width: 100%;
   line-height: 24px;
-  padding: 30px 0;
+  padding: 50px 0;
   margin: 0 auto;
 `

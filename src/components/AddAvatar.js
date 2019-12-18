@@ -17,7 +17,6 @@ export class BtnAddAvatar extends React.Component {
 }
 
 const AddAvatar = styled.div`
-  margin: 30px 0 0 0;
   color: #6184FF;
   text-align: center;
   border: 5px solid #6184FF;
@@ -30,9 +29,8 @@ const AddAvatar = styled.div`
   font-weight: 500;
   line-height: 24px;
   height: 300px;
-  width: 212px;
+  width: 100%;
   cursor: pointer;
-  margin-left: 40px;
   &:hover {
     background: #6184FF
     color: #fff

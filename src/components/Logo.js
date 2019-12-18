@@ -8,5 +8,5 @@ export class Logo extends React.Component {
 }
 
 const Logotype = styled.img`
-  margin: 80px auto;
+  margin: 30px auto;
 `
