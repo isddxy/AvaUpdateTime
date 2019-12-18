@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import UserContainer from '../containers/UserContainer' // изменили импорт
-//import PageContainer from '../containers/PageContainer'
+//import AvatarContainer from '../containers/AvatarContainer'
+//import { BtnAddAvatar } from '../components/AddAvatar'
 import { Logo } from './Logo' // изменили импорт
 import styled from 'styled-components'
 
@@ -10,7 +11,6 @@ class App extends Component {
       <Wrapper>
         <Logo />
         <UserContainer />
-        {/*<PageContainer />*/}
       </Wrapper>
     )
   }

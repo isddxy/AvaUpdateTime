@@ -5,7 +5,9 @@ import {
 } from '../actions/UserActions'
 
 const initialState = {
-  name: '',
+  id: '',
+  firstname: '',
+  lastname: '',
   error: '',
   isFetching: false,
 }
@@ -16,7 +18,13 @@ export function userReducer(state = initialState, action) {
       return { ...state, isFetching: true, error: '' }
 
     case LOGIN_SUCCESS:
-      return { ...state, isFetching: false, name: action.payload }
+      return {
+        ...state,
+        isFetching: false,
+        id: action.payload.id,
+        firstname: action.payload.firstname,
+        lastname: action.payload.lastname,
+      }
 
     case LOGIN_FAIL:
       return { ...state, isFetching: false, error: action.payload.message }

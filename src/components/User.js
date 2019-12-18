@@ -1,37 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Avatar } from './Avatar'
+import AvatarContainer from '../containers/AvatarContainer'
+import { BtnAddAvatar } from '../components/AddAvatar'
 
 export class User extends React.Component {
   renderTemplate = () => {
-    const { name, error, isFetching } = this.props
+    const { firstname, lastname, error, isFetching, avatar } = this.props
 
     if (error) {
-      return <p>Во время запроса произошла ошибка, обновите страницу</p>
+      return (
+        <p>
+          Во время запроса произошла ошибка, обновите страницу
+          <br />
+          {error}
+        </p>
+      )
     }
 
     if (isFetching) {
       return <p>Загружаю...</p>
     }
 
-    if (name) {
+    if (firstname) {
       return (
         <div>
           <AvatarList>
-            <Avatar />
-            <Avatar />
-            <Avatar />
+            <AvatarContainer avatar={avatar} />
             <div>
-              <UserName>{name}</UserName>
-              <AddAvatar>
-                <div>
-                  <Icon src={'upload.svg'} />
-                  <p>
-                    Загрузить <br /> новую аватарку
-                  </p>
-                </div>
-              </AddAvatar>
+              <UserName>
+                {' '}
+                {firstname} {lastname}
+              </UserName>
+              <BtnAddAvatar />
             </div>
           </AvatarList>
           <LoginVK onClick={this.props.handleLogin}>
@@ -62,7 +63,9 @@ export class User extends React.Component {
 }
 
 User.propTypes = {
-  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  firstname: PropTypes.string.isRequired,
+  lastname: PropTypes.string.isRequired,
   error: PropTypes.string,
   isFetching: PropTypes.bool.isRequired,
   handleLogin: PropTypes.func.isRequired,
@@ -125,30 +128,4 @@ const UserName = styled.p`
   line-height: 24px;
   padding: 30px 0;
   margin: 0 auto;
-`
-
-const AddAvatar = styled.div`
-  margin: 30px 0 0 0;
-  color: #6184FF;
-  text-align: center;
-  border: 5px solid #6184FF;
-  border-radius: 6px;
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  height: 300px;
-  width: 212px;
-  cursor: pointer;
-  margin-left: 40px;
-  &:hover {
-    background: #6184FF
-    color: #fff
-  }
-`
-
-const Icon = styled.img`
-  margin-bottom: 18px;
 `

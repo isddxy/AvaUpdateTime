@@ -11,11 +11,17 @@ export function handleLogin(callback) {
     //eslint-disable-next-line no-undef
     VK.Auth.login(r => {
       if (r.session) {
-        const username = r.session.user.first_name
+        const id = r.session.user.id
+        const firstname = r.session.user.first_name
+        const lastname = r.session.user.last_name
 
         dispatch({
           type: LOGIN_SUCCESS,
-          payload: username,
+          payload: {
+            id: id,
+            firstname: firstname,
+            lastname: lastname,
+          },
         })
         callback()
       } else {
