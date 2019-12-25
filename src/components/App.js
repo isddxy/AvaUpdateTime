@@ -21,4 +21,5 @@ export default App
 const Wrapper = styled.div`
   width: 100%;
   display: grid;
+  font-family: 'Montserrat', sans-serif;
 `
