@@ -18,6 +18,7 @@ class UserContainer extends React.Component {
     const { user } = this.props
     return (
       <User
+        id={user.id}
         firstname={user.firstname}
         lastname={user.lastname}
         error={user.error}

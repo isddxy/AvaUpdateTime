@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import AvatarContainer from '../containers/AvatarContainer'
-import { BtnAddAvatar } from '../components/AddAvatar'
+import UploadContainer from '../containers/UploadContainer'
 
 export class User extends React.Component {
   renderTemplate = () => {
-    const { firstname, lastname, error, isFetching, avatar } = this.props
+    const { firstname, lastname, error, isFetching, avatar, id } = this.props
 
     if (error) {
       return (
@@ -33,7 +33,7 @@ export class User extends React.Component {
               <UserName>
                 {firstname} {lastname}
               </UserName>
-              <BtnAddAvatar />
+              <UploadContainer id={id} />
             </UserInfo>
           </AvatarList>
           <LoginVK onClick={this.props.handleLogin}>

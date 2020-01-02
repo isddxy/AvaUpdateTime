@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Avatar } from '../components/Avatar'
-import { getAvatar } from '../actions/GetAvatarAction'
 
 class AvatarContainer extends React.Component {
   render() {
@@ -25,10 +24,6 @@ const mapStateToProps = store => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getAvatar: avatar => dispatch(getAvatar('214070232')),
-  }
-}
+const mapDispatchToProps = dispatch => {}
 
 export default connect(mapStateToProps, mapDispatchToProps)(AvatarContainer)
