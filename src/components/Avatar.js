@@ -40,7 +40,7 @@ Avatar.propTypes = {
   avatar: PropTypes.string.isRequired,
   miniavatar: PropTypes.string.isRequired,
   error: PropTypes.string,
-  isFetching: PropTypes.bool.isRequired,
+  isFetching: PropTypes.bool,
 }
 
 const BlockAvatar = styled.div`

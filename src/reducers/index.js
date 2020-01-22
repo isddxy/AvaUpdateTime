@@ -2,11 +2,11 @@ import { combineReducers } from 'redux'
 import { pageReducer } from './page'
 import { userReducer } from './user'
 import { avatarReducer } from './avatar'
-import { uploadReducer } from './upload'
+import { getServerUrlReducer } from './getServerUrl'
 
 export const rootReducer = combineReducers({
   page: pageReducer,
   user: userReducer,
   avatar: avatarReducer,
-  upload: uploadReducer,
+  server: getServerUrlReducer,
 })

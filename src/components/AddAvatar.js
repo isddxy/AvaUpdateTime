@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import axios from 'axios'
+//import axios from 'axios'
 
 export class BtnAddAvatar extends React.Component {
   state = {
@@ -17,25 +17,26 @@ export class BtnAddAvatar extends React.Component {
 
   fileUploadHandler = () => {
     this.props.clickUploadPhoto()
-    const fd = new FormData()
-    fd.append('photo', this.state.selectedFile)
-    axios
-      .post(
-        'https://pu.vk.com/c857420/upload.php?_query=eyJhY3QiOiJvd25lcl9waG90byIsInNhdmUiOjEsImFwaV93cmFwIjp7InNlcnZlciI6OTk5LCJwaG90byI6IntyZXN1bHR9IiwibWlkIjoyMTQwNzAyMzIsImhhc2giOiI3NDQ4ZjkzZjQwNWRmZDVjNDQ0ZjVkNGFhYmI4NDk0MiIsIm1lc3NhZ2VfY29kZSI6MiwicHJvZmlsZV9haWQiOi02fSwib2lkIjoyMTQwNzAyMzIsIm1pZCI6MjE0MDcwMjMyLCJzZXJ2ZXIiOjg1NzQyMCwiX29yaWdpbiI6Imh0dHBzOlwvXC9hcGkudmsuY29tIiwiX3NpZyI6IjZlODg1NTcxNjA4MzRjM2YxMjg2YTk1MGIxOWE5OTgxIn0',
-        fd,
-        {
-          onUploadProgress: progressEvent => {
-            console.log(
-              'Progress: ' +
-                Math.round((progressEvent.loaded / progressEvent.total) * 100) +
-                '%'
-            )
-          },
-        }
-      )
-      .then(res => {
-        console.log(res)
-      })
+
+    // const fd = new FormData()
+    // fd.append('photo', this.state.selectedFile)
+    // axios
+    //   .post(
+    //     'https://pu.vk.com/c857420/upload.php?_query=eyJhY3QiOiJvd25lcl9waG90byIsInNhdmUiOjEsImFwaV93cmFwIjp7InNlcnZlciI6OTk5LCJwaG90byI6IntyZXN1bHR9IiwibWlkIjoyMTQwNzAyMzIsImhhc2giOiI3NDQ4ZjkzZjQwNWRmZDVjNDQ0ZjVkNGFhYmI4NDk0MiIsIm1lc3NhZ2VfY29kZSI6MiwicHJvZmlsZV9haWQiOi02fSwib2lkIjoyMTQwNzAyMzIsIm1pZCI6MjE0MDcwMjMyLCJzZXJ2ZXIiOjg1NzQyMCwiX29yaWdpbiI6Imh0dHBzOlwvXC9hcGkudmsuY29tIiwiX3NpZyI6IjZlODg1NTcxNjA4MzRjM2YxMjg2YTk1MGIxOWE5OTgxIn0',
+    //     fd,
+    //     {
+    //       onUploadProgress: progressEvent => {
+    //         console.log(
+    //           'Progress: ' +
+    //             Math.round((progressEvent.loaded / progressEvent.total) * 100) +
+    //             '%'
+    //         )
+    //       },
+    //     }
+    //   )
+    //   .then(res => {
+    //     console.log(res)
+    //   })
   }
 
   render() {

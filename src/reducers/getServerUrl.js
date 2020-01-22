@@ -1,8 +1,8 @@
 import {
-  UPLOAD_PHOTO_REQUEST,
-  UPLOAD_PHOTO_SUCCESS,
-  UPLOAD_PHOTO_FAIL,
-} from '../actions/UploadPhotoAction'
+  GET_URL_SERVER_REQUEST,
+  GET_URL_SERVER_SUCCESS,
+  GET_URL_SERVER_FAIL,
+} from '../actions/GetUrlServerAction'
 
 const initialState = {
   Id: {
@@ -12,12 +12,12 @@ const initialState = {
   error: '',
 }
 
-export function uploadReducer(state = initialState, action) {
+export function getServerUrlReducer(state = initialState, action) {
   switch (action.type) {
-    case UPLOAD_PHOTO_REQUEST:
+    case GET_URL_SERVER_REQUEST:
       return { ...state, isFetching: true, error: '' }
 
-    case UPLOAD_PHOTO_SUCCESS:
+    case GET_URL_SERVER_SUCCESS:
       return {
         ...state,
         upload_url: action.payload,
@@ -25,7 +25,7 @@ export function uploadReducer(state = initialState, action) {
         error: '',
       }
 
-    case UPLOAD_PHOTO_FAIL:
+    case GET_URL_SERVER_FAIL:
       return { ...state, error: action.payload.message, isFetching: false }
 
     default:

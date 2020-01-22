@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { uploadPhoto } from '../actions/UploadPhotoAction'
+import { getUrlServer } from '../actions/GetUrlServerAction'
 import { BtnAddAvatar } from '../components/AddAvatar'
 
 class UploadContainer extends React.Component {
@@ -30,8 +30,8 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    clickUploadPhoto: successCallback => dispatch(uploadPhoto('214070232')),
-    uploadPhoto: id => dispatch(uploadPhoto('214070232')),
+    clickUploadPhoto: successCallback => dispatch(getUrlServer('214070232')),
+    getUrlServer: id => dispatch(getUrlServer('214070232')),
   }
 }
 

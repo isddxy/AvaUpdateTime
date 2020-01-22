@@ -1,11 +1,11 @@
-export const UPLOAD_PHOTO_REQUEST = 'UPLOAD_PHOTO_REQUEST'
-export const UPLOAD_PHOTO_SUCCESS = 'UPLOAD_PHOTO_SUCCESS'
-export const UPLOAD_PHOTO_FAIL = 'UPLOAD_PHOTO_FAIL'
+export const GET_URL_SERVER_REQUEST = 'GET_URL_SERVER_REQUEST'
+export const GET_URL_SERVER_SUCCESS = 'GET_URL_SERVER_SUCCESS'
+export const GET_URL_SERVER_FAIL = 'GET_URL_SERVER_FAIL'
 
-export function uploadPhoto(id) {
+export function getUrlServer(id) {
   return function(dispatch) {
     dispatch({
-      type: UPLOAD_PHOTO_REQUEST,
+      type: GET_URL_SERVER_REQUEST,
     })
 
     //eslint-disable-next-line no-undef
@@ -15,16 +15,16 @@ export function uploadPhoto(id) {
       r => {
         if (r.response) {
           const upload_url = r.response.upload_url
-          console.log(upload_url)
+          //console.log(upload_url)
           dispatch({
-            type: UPLOAD_PHOTO_SUCCESS,
+            type: GET_URL_SERVER_SUCCESS,
             payload: {
               upload_url: upload_url,
             },
           })
         } else {
           dispatch({
-            type: UPLOAD_PHOTO_FAIL,
+            type: GET_URL_SERVER_FAIL,
             error: true,
             payload: new Error('Ошибка запроса сервера'),
           })
